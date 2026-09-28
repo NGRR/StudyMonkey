@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111318">
+  <meta name="description" content="StudyMonkey: repaso guiado e interactivo de mol, masa molar, Avogadro, nomenclatura y estequiometría.">
+  <title>StudyMonkey · Estequiometría</title>
+  <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="StudyMonkey inicio">
+        <span class="brand-mark">SM</span>
+        <span>
+          <strong>StudyMonkey</strong>
+          <small>Química · Estequiometría</small>
+        </span>
+      </a>
+      <div class="session-tools">
+        <button class="timer" id="timerButton" type="button" aria-label="Iniciar o pausar temporizador">
+          <span class="timer-dot"></span>
+          <span id="timerValue">30:00</span>
+        </button>
+        <button class="ghost-button" id="resetButton" type="button">Reiniciar</button>
+      </div>
+    </header>
+
+    <div class="progress-area">
+      <div class="progress-copy">
+        <span id="progressLabel">0 de 10 conceptos dominados</span>
+        <span id="slideTime">Min 0–3</span>
+      </div>
+      <div class="progress-track" aria-hidden="true">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+    </div>
+
+    <div class="workspace">
+      <aside class="outline" aria-label="Temario">
+        <div class="outline-head">
+          <span>Ruta de 30 minutos</span>
+          <strong id="outlinePercent">0%</strong>
+        </div>
+        <nav id="outlineNav"></nav>
+        <div class="legend">
+          <span><i class="status-dot current"></i> Actual</span>
+          <span><i class="status-dot done"></i> Dominado</span>
+        </div>
+      </aside>
+
+      <main class="stage">
+        <article class="slide" id="slide" aria-live="polite"></article>
+      </main>
+    </div>
+
+    <footer class="bottom-nav">
+      <button class="nav-button secondary" id="prevButton" type="button">← Anterior</button>
+      <div class="slide-counter" id="slideCounter">01 / 10</div>
+      <button class="nav-button primary" id="nextButton" type="button">Siguiente →</button>
+    </footer>
+  </div>
+
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>
