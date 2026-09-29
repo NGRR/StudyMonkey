@@ -169,6 +169,33 @@ button { cursor: pointer; }
 details.note-box { border:1px solid var(--line); border-radius:14px; background:white; padding:0 14px; }
 details.note-box summary { cursor:pointer; padding:14px 0; font-weight:800; font-size:13px; }
 details.note-box div { padding:0 0 15px; color:#4b4e54; line-height:1.55; }
+.decision-map { display:grid; gap:10px; }
+.decision-step {
+  display:grid; grid-template-columns:minmax(48px,auto) 1fr; gap:14px; align-items:start;
+  padding:14px; border:1px solid #3c4049; border-radius:14px; background:#1c1f25;
+}
+.decision-step > span {
+  min-width:48px; height:34px; padding:0 9px; display:grid; place-items:center;
+  border-radius:10px; background:#fff; color:var(--ink); font-size:11px; font-weight:900;
+}
+.decision-step small { display:block; color:#9ea3ad; margin-bottom:4px; }
+.decision-step strong { display:block; color:#fff; line-height:1.35; }
+.decision-step p { margin:7px 0 0; color:#b9bdc7; font-size:12px; line-height:1.45; }
+.decision-map.compact .decision-step { padding:12px; }
+.variable-table {
+  display:grid; grid-template-columns:repeat(5,minmax(110px,1fr)); gap:8px;
+}
+.variable-table > div {
+  min-height:118px; border:1px solid #3c4049; border-radius:14px; padding:14px;
+  background:#1d2026; display:flex; flex-direction:column; justify-content:space-between;
+}
+.variable-table strong { font-size:28px; color:#fff; }
+.variable-table span { font-size:12px; font-weight:800; color:#fff; }
+.variable-table small { color:#9ea3ad; line-height:1.35; }
+.worked-problem > p { margin:0 0 10px; color:#d9dce2; line-height:1.55; }
+.worked-problem > p:last-child { margin-bottom:0; }
+.worked-problem .mathline { color:var(--ink); margin-top:12px; }
+
 @media (max-width: 900px) {
   .workspace { grid-template-columns:1fr; padding-bottom:100px; }
   .outline { position:static; max-height:none; overflow:visible; padding:10px; }
@@ -176,7 +203,7 @@ details.note-box div { padding:0 0 15px; color:#4b4e54; line-height:1.55; }
   .outline nav::-webkit-scrollbar { display:none; }
   .outline-button { min-width:150px; }
   .legend { display:none; }
-  .section-grid,.origin-grid { grid-template-columns:1fr; }
+  .section-grid,.origin-grid,.variable-table { grid-template-columns:1fr; }
   .slide { min-height:0; }
 }
 @media (max-width: 620px) {
