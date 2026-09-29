@@ -258,55 +258,137 @@
     },
     {
       title: "Nomenclatura binaria",
-      eyebrow: "09 · Traducir fórmulas a nombres",
-      lead: "Aquí no hacemos todavía estequiometría. Practicamos reconocer cuántos tipos de elementos hay y cómo los subíndices pueden aparecer reflejados en el nombre.",
+      eyebrow: "09 · Aprender a decidir el nombre",
+      lead: "No basta con memorizar «CO₂ = dióxido de carbono». La meta es poder mirar una fórmula nueva, reconocer qué información contiene y decidir paso a paso cómo nombrarla.",
       body: () =>
-        recall("Binario significa dos elementos diferentes, no dos átomos. CO₂ tiene 3 átomos totales, pero sólo dos elementos: C y O.") +
-        visual("Prefijos frecuentes",
-          "<div class='flow'>" +
-            "<span class='flow-node'>mono = 1</span><span class='flow-node'>di = 2</span><span class='flow-node'>tri = 3</span><span class='flow-node'>tetra = 4</span><span class='flow-node'>penta = 5</span>" +
+        recall("Primero lee la fórmula como en la sección 1. Los subíndices siguen significando cantidad de átomos. «Binario» sólo indica que aparecen dos elementos diferentes. CO₂ tiene C y O: dos elementos, aunque haya tres átomos en total.") +
+        visual("Paso 1 · Antes de nombrar, identifica qué estás mirando",
+          "<div class='decision-map'>" +
+            "<div class='decision-step'><span>1</span><div><small>Cuenta tipos de elementos</small><strong>CO₂ → C + O → es binario</strong></div></div>" +
+            "<div class='decision-step'><span>2</span><div><small>Lee los subíndices</small><strong>C = 1 · O = 2</strong></div></div>" +
+            "<div class='decision-step'><span>3</span><div><small>Reconoce la familia</small><strong>Hay oxígeno → puede nombrarse como óxido</strong></div></div>" +
+            "<div class='decision-step'><span>4</span><div><small>Elige el sistema pedido</small><strong>Prefijos o nomenclatura Stock</strong></div></div>" +
           "</div>"
         ) +
         easyTechnical(
-          "<p>CO tiene un oxígeno: monóxido de carbono. CO₂ tiene dos: dióxido de carbono. N₂O₅ usa di- para dos N y penta- para cinco O.</p>",
-          "<p>En nomenclatura sistemática, los prefijos griegos indican la estequiometría de los elementos. En nomenclatura Stock, números romanos pueden indicar el estado de oxidación, no la cantidad de átomos.</p>"
+          "<p>Para empezar por lo más simple, usa los <strong>prefijos como contadores</strong>. El nombre traduce los subíndices: mono = 1, di = 2, tri = 3, tetra = 4, penta = 5.</p><p>CO₂ tiene 2 oxígenos. Por eso aparece <strong>di</strong> + óxido: <strong>dióxido de carbono</strong>.</p>",
+          "<p>La nomenclatura sistemática usa prefijos multiplicativos para expresar la estequiometría del compuesto. La nomenclatura Stock, en cambio, puede indicar con números romanos el <strong>estado de oxidación</strong> de un elemento cuando éste puede presentar más de uno.</p>"
         ) +
-        "<div class='section-grid'><div class='card'><h3>Subíndice</h3><p>Fe₂O₃: 2 y 3 indican cantidades de átomos en la fórmula.</p></div><div class='card'><h3>Número romano</h3><p>Hierro (III): III indica estado de oxidación del hierro.</p></div></div>",
+        visual("Los prefijos no son otra fórmula: sólo traducen cantidades",
+          "<div class='flow'>" +
+            "<span class='flow-node'>CO → 1 O → monóxido</span>" +
+            "<span class='flow-node'>CO₂ → 2 O → dióxido</span>" +
+            "<span class='flow-node'>N₂O₃ → 3 O → trióxido</span>" +
+            "<span class='flow-node'>N₂O₅ → 5 O → pentóxido</span>" +
+          "</div>"
+        ) +
+        "<div class='card'><h3>Ejemplo guiado · N₂O₅</h3><p><strong>1.</strong> Hay N y O: dos elementos → compuesto binario.</p><p><strong>2.</strong> O tiene subíndice 5 → penta + óxido = <strong>pentóxido</strong>.</p><p><strong>3.</strong> N tiene subíndice 2 → di + nitrógeno = <strong>dinitrógeno</strong>.</p><p><strong>Resultado:</strong> pentóxido de dinitrógeno.</p></div>" +
+        recall("No confundas tres cosas distintas: <strong>subíndice</strong> = cuántos átomos hay; <strong>coeficiente</strong> = cuántas unidades/mol participan en una reacción; <strong>número romano</strong> = estado de oxidación en nomenclatura Stock.") +
+        "<div class='section-grid'>" +
+          "<div class='card'><h3>¿De dónde sale Fe (III)?</h3><p>En Fe₂O₃, el oxígeno suele trabajar con −2. Tres O aportan −6 en total. Como el compuesto completo debe quedar neutro, los dos Fe deben aportar +6. Entonces cada Fe aporta +3: por eso se escribe <strong>hierro (III)</strong>.</p></div>" +
+          "<div class='card'><h3>¿Por qué no significa “3 hierros”?</h3><p>Porque la cantidad de átomos ya está escrita en la fórmula como Fe₂. El III pertenece al <strong>estado de oxidación</strong>, otra propiedad diferente.</p></div>" +
+        "</div>" +
+        visual("Ruta práctica para un ejercicio de nombre",
+          "<div class='flow'>" +
+            "<span class='flow-node'>leo fórmula</span><span class='flow-arrow'>→</span>" +
+            "<span class='flow-node'>cuento elementos</span><span class='flow-arrow'>→</span>" +
+            "<span class='flow-node'>leo subíndices</span><span class='flow-arrow'>→</span>" +
+            "<span class='flow-node'>identifico óxido / familia</span><span class='flow-arrow'>→</span>" +
+            "<span class='flow-node'>aplico sistema pedido</span>" +
+          "</div>"
+        ) +
+        "<details class='note-box'><summary>Si te piden ir al revés: nombre → fórmula</summary><div>Los prefijos vuelven a convertirse en subíndices. <strong>Dióxido de carbono</strong>: di = 2 oxígenos; carbono sin prefijo explícito = 1 carbono → CO₂. En Stock, primero hay que usar los estados de oxidación para que la suma de cargas del compuesto sea neutra.</div></details>",
       exercise: {
         type: "choice",
-        prompt: "¿Cómo se nombra CO₂ usando prefijos?",
-        options: ["Monóxido de carbono", "Dióxido de carbono", "Óxido de carbono (I)", "Carbonato de oxígeno"],
-        answer: 1,
-        explanation: "CO₂ contiene dos átomos de oxígeno por cada carbono; el prefijo di- indica 2."
+        prompt: "Te entregan N₂O₃. ¿Qué razonamiento lleva al nombre correcto?",
+        options: [
+          "Tiene 2 elementos; O₃ indica trióxido y N₂ indica dinitrógeno → trióxido de dinitrógeno",
+          "El 3 es número romano → óxido de nitrógeno (III)",
+          "Tiene 5 átomos, por eso es pentóxido de nitrógeno",
+          "Se suman 2 + 3 y se usa el prefijo penta para todo"
+        ],
+        answer: 0,
+        explanation: "Primero distingues elementos y subíndices. N₂O₃ tiene dos elementos; O₃ se traduce con tri- y N₂ con di-. Los prefijos describen cantidades de cada elemento, no el total de átomos."
       }
     },
     {
       title: "Estequiometría",
-      eyebrow: "10 · Juntar todo",
-      lead: "La reacción balanceada aporta una proporción entre mol. Para llegar desde gramos hasta gramos de otra sustancia, pasamos por mol.",
+      eyebrow: "10 · Elegir la operación antes de calcular",
+      lead: "La estequiometría no consiste en recordar una fórmula larga. Consiste en reconocer qué variable tienes, qué variable necesitas y qué puente permite pasar de una a la otra.",
       body: () =>
-        recall("Coeficiente y subíndice son distintos. En 2 H₂O, el 2 grande significa dos unidades o dos mol de H₂O; el subíndice ₂ sigue diciendo que cada H₂O contiene 2 H.") +
-        visual("Reacción balanceada",
+        recall("Antes de esta sección ya tienes cuatro ideas: 1) una fórmula dice cuántos átomos hay; 2) la tabla periódica entrega masas atómicas; 3) la masa molar M expresa g/mol; 4) 1 mol contiene 6,022 × 10²³ partículas. Ahora sólo vamos a conectarlas.") +
+        visual("Las variables · qué significa cada letra",
+          "<div class='variable-table'>" +
+            "<div><strong>m</strong><span>masa</span><small>se mide en g</small></div>" +
+            "<div><strong>M</strong><span>masa molar</span><small>se mide en g/mol</small></div>" +
+            "<div><strong>n</strong><span>cantidad de sustancia</span><small>se mide en mol</small></div>" +
+            "<div><strong>N</strong><span>número de partículas</span><small>átomos, moléculas, iones…</small></div>" +
+            "<div><strong>N<sub>A</sub></strong><span>Avogadro</span><small>6,022 × 10²³ partículas/mol</small></div>" +
+          "</div>"
+        ) +
+        "<div class='card'><h3>La pregunta que manda: ¿qué unidad tengo y qué unidad necesito?</h3><p>Las unidades te dicen qué operación tiene sentido. No eliges una fórmula porque “te suena”: eliges un puente porque conecta las unidades del dato con las unidades de la respuesta.</p></div>" +
+        visual("Por qué cada fórmula usa esa operación",
+          "<div class='decision-map'>" +
+            "<div class='decision-step'><span>g→mol</span><div><small>n = m / M</small><strong>g ÷ (g/mol) = mol</strong><p>Tienes gramos y cada mol pesa M gramos. Dividir dice cuántos grupos de M caben en la masa.</p></div></div>" +
+            "<div class='decision-step'><span>mol→g</span><div><small>m = n · M</small><strong>mol × (g/mol) = g</strong><p>Tienes n grupos y cada grupo pesa M gramos: por eso multiplicas.</p></div></div>" +
+            "<div class='decision-step'><span>mol→N</span><div><small>N = n · N<sub>A</sub></small><strong>mol × (partículas/mol) = partículas</strong><p>Cada mol contiene un grupo de Avogadro: por eso multiplicas.</p></div></div>" +
+            "<div class='decision-step'><span>N→mol</span><div><small>n = N / N<sub>A</sub></small><strong>partículas ÷ (partículas/mol) = mol</strong><p>Preguntas cuántos grupos de Avogadro están contenidos en ese número de partículas.</p></div></div>" +
+          "</div>"
+        ) +
+        recall("Si hay una <strong>reacción química</strong>, aparece un puente adicional: <strong>mol de una sustancia → mol de otra sustancia</strong>. Ese puente sale de los coeficientes de la ecuación balanceada.") +
+        visual("Reacción balanceada · los coeficientes son una proporción molar",
           "<div class='formula-box'>2 H<sub>2</sub> + O<sub>2</sub> → 2 H<sub>2</sub>O</div>" +
           "<div class='origin-grid'>" +
-            "<div class='origin'><small>H antes / después</small><strong>4 / 4</strong></div>" +
-            "<div class='origin'><small>O antes / después</small><strong>2 / 2</strong></div>" +
-            "<div class='origin'><small>Relación molar</small><strong>2 : 1 : 2</strong></div>" +
+            "<div class='origin'><small>2 delante de H₂</small><strong>2 mol H₂</strong></div>" +
+            "<div class='origin'><small>sin número delante de O₂</small><strong>1 mol O₂</strong></div>" +
+            "<div class='origin'><small>2 delante de H₂O</small><strong>2 mol H₂O</strong></div>" +
+          "</div>"
+        ) +
+        "<div class='card'><h3>¿Por qué los coeficientes no comparan gramos directamente?</h3><p>Porque 2 mol de H₂ y 2 mol de H₂O contienen el mismo número de moléculas, pero <strong>no pesan lo mismo</strong>. H₂ tiene M ≈ 2 g/mol; H₂O tiene M ≈ 18 g/mol. Los coeficientes comparan cantidades de partículas o mol, no masas en gramos.</p></div>" +
+        visual("Problema nivel 1 · sólo mol",
+          "<div class='worked-problem'>" +
+            "<p><strong>Pregunta:</strong> si reaccionan 6 mol de H₂, ¿cuántos mol de H₂O pueden formarse?</p>" +
+            "<p><strong>Dato:</strong> 6 mol H₂. <strong>Piden:</strong> mol H₂O.</p>" +
+            "<p><strong>Decisión:</strong> ya estamos en mol. No necesitamos masa molar ni Avogadro. Usamos sólo los coeficientes.</p>" +
+            "<div class='mathline'>2 mol H₂ → 2 mol H₂O<br>6 mol H₂ → 6 mol H₂O</div>" +
+          "</div>"
+        ) +
+        visual("Problema nivel 2 · gramos → mol",
+          "<div class='worked-problem'>" +
+            "<p><strong>Pregunta:</strong> ¿cuántos mol hay en 4 g de H₂?</p>" +
+            "<p><strong>Dato:</strong> gramos. <strong>Piden:</strong> mol.</p>" +
+            "<p><strong>Decisión:</strong> gramos → mol exige masa molar M.</p>" +
+            "<p><strong>¿De dónde sale M?</strong> H₂ tiene 2 H; en la tabla H ≈ 1 → M(H₂)=2×1=2 g/mol.</p>" +
+            "<div class='mathline'>n = m/M = 4 g ÷ 2 g/mol = 2 mol H₂</div>" +
+          "</div>"
+        ) +
+        visual("Problema nivel 3 · completo: gramos de A → gramos de B",
+          "<div class='worked-problem'>" +
+            "<p><strong>Pregunta:</strong> ¿cuántos gramos de H₂O pueden producirse a partir de 4 g de H₂?</p>" +
+            "<div class='decision-map compact'>" +
+              "<div class='decision-step'><span>1</span><div><small>Tengo gramos H₂</small><strong>Debo llegar primero a mol H₂</strong><p>Uso M(H₂)=2 g/mol → 4÷2 = 2 mol H₂.</p></div></div>" +
+              "<div class='decision-step'><span>2</span><div><small>Tengo mol H₂</small><strong>Ahora puedo usar la reacción</strong><p>2 mol H₂ : 2 mol H₂O → obtengo 2 mol H₂O.</p></div></div>" +
+              "<div class='decision-step'><span>3</span><div><small>Tengo mol H₂O</small><strong>Pero me piden gramos H₂O</strong><p>Busco M(H₂O): 2×1 + 16 = 18 g/mol.</p></div></div>" +
+              "<div class='decision-step'><span>4</span><div><small>mol → gramos</small><strong>m = n·M</strong><p>2 mol × 18 g/mol = 36 g H₂O.</p></div></div>" +
+            "</div>" +
           "</div>"
         ) +
         easyTechnical(
-          "<p>La ecuación es una receta: 2 mol de H₂ reaccionan con 1 mol de O₂ y producen 2 mol de H₂O.</p><p>Si el problema parte en gramos, primero convierte esos gramos a mol.</p>",
-          "<p>Los coeficientes de una ecuación balanceada definen las relaciones estequiométricas molares. Una conversión masa→masa sigue: masa A → mol A → relación molar A:B → mol B → masa B.</p>"
+          "<p>La regla práctica es <strong>¿qué tengo? → ¿cómo llego a mol? → ¿la reacción cambia de sustancia? → ¿cómo salgo de mol hacia lo que me piden?</strong></p>",
+          "<p>En una conversión estequiométrica masa→masa, las masas molares convierten entre masa y cantidad de sustancia, mientras la relación entre coeficientes balanceados convierte entre cantidades de sustancias diferentes.</p>"
         ) +
-        "<div class='mathline'>4 g H₂<br>→ M(H₂)=2×1=2 g/mol<br>→ 4÷2 = 2 mol H₂<br>→ relación 2 mol H₂ : 2 mol H₂O<br>→ 2 mol H₂O<br>→ M(H₂O)=18 g/mol<br>→ 2×18 = 36 g H₂O</div>" +
-        "<details class='note-box'><summary>Regla de emergencia para la prueba</summary><div>Escribe: <strong>¿qué tengo? → mol → ¿qué me piden?</strong> Si hay una reacción, entre ambos mol usa los coeficientes de la ecuación balanceada.</div></details>",
+        "<details class='note-box' open><summary>Tarjeta de decisión para usar durante ejercicios</summary><div><strong>Si veo g:</strong> pienso en masa molar.<br><strong>Si veo mol:</strong> puedo usar directamente una relación estequiométrica.<br><strong>Si veo partículas:</strong> pienso en Avogadro.<br><strong>Si cambio de una sustancia A a otra B:</strong> necesito una ecuación balanceada y sus coeficientes.<br><strong>Si no sé qué hacer:</strong> escribo las unidades del dato y de la respuesta y construyo un camino que pase por mol.</div></details>",
       exercise: {
-        type: "number",
-        prompt: "Según 2H₂ + O₂ → 2H₂O, ¿cuántos gramos de H₂O se obtienen teóricamente de 4 g de H₂? Usa H≈1 y O≈16.",
-        answer: 36,
-        tolerance: 0.1,
-        unit: "g H₂O",
-        explanation: "4 g H₂ ÷ 2 g/mol = 2 mol H₂. La proporción 2:2 entrega 2 mol H₂O. Cada mol de H₂O pesa 18 g, por lo que 2×18 = 36 g."
+        type: "choice",
+        prompt: "Problema: «¿Cuántos gramos de H₂O se forman a partir de 6 mol de H₂?» ¿Cuál es el camino correcto?",
+        options: [
+          "6 mol H₂ → usar relación 2:2 → 6 mol H₂O → calcular M(H₂O) → convertir a gramos",
+          "6 mol H₂ → multiplicar inmediatamente por 6,022×10²³ → convertir partículas directamente a gramos",
+          "6 mol H₂ → usar el subíndice ₂ como relación con H₂O → 12 g H₂O",
+          "6 mol H₂ → sumar las masas atómicas de H₂ y H₂O y dividir"
+        ],
+        answer: 0,
+        explanation: "Ya tienes mol, así que no necesitas convertir H₂ antes de usar la ecuación. Los coeficientes 2:2 llevan de mol H₂ a mol H₂O. Recién después usas M(H₂O)=18 g/mol para obtener gramos: 6×18 = 108 g."
       }
     }
   ];
